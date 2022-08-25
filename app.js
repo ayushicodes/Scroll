@@ -4,16 +4,34 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 // ********** set date ************
-
+let date = document.getElementById('date')
+date.innerHTML = new Date().getFullYear()
 // ********** close links ************
+let linksContainer = document.querySelector('.links-container')
+let links = document.querySelector('.links')
+let navToggle = document.querySelector('.nav-toggle')
+
+navToggle.addEventListener('click', function () {
+
+    // linksContainer.classList.add('show-links')
+    let linkHeight = links.getBoundingClientRect().height
+    let linkContainerHeight = linksContainer.getBoundingClientRect().height
+
+    if (linkContainerHeight === 0) {
+        linksContainer.style.height = `${linkHeight}px`
+    }
+    else {
+        linksContainer.style.height = 0
+    }
+
+
+})
 
 // ********** fixed navbar ************
 
 // ********** smooth scroll ************
 // select links
 
-let date = document.getElementById('date')
-date.innerHTML = new Date().getFullYear()
 
 
 
